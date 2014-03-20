@@ -1,10 +1,13 @@
 /* Helper libraries */
 
 @import 'variables.less';
+@import 'typography.less';
 
 /* General Page Setup */
 
 html, body {
+  font-family: @firaFontFamily;
+  font-weight: 300;
   font-size: 14px;
   color: @dark-gray;
   margin: 0;
@@ -24,7 +27,7 @@ html, body {
 }
 
 .content {
-  width: 800px;
+  width: @content-width;
   margin-left: auto;
   margin-right: auto;
 }

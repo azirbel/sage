@@ -1,24 +1,21 @@
 
 @import '../variables.less';
 
-@tab-top-radius: 4px;
-
-h2 {
-  font-size: 24px;
-  color: @green;
-}
+@tab-top-radius:  4px;
+@header-height:   40px;
 
 .header {
-  height: 50px;
   margin-top: 20px;
-  padding-bottom: 10px;
+  width: @content-width;
+
+  height: @header-height;
   border-bottom: 1px solid @green;
 }
 
 .logo {
   display: inline;
-  height: 30px;
-  margin-right: 20px;
+  margin-left: 8px;
+  margin-right: 16px;
 }
 
 ul.navigation {
@@ -28,6 +25,7 @@ ul.navigation {
 
   li {
     display: inline;
+    height: @header-height;
 
     font-size: 16px;
 
@@ -36,12 +34,21 @@ ul.navigation {
       cursor: pointer;
       padding: 6px 12px 6px 12px;
 
+      margin-top: auto;
+
       -webkit-border-top-left-radius: @tab-top-radius;
       -webkit-border-top-right-radius: @tab-top-radius;
       -moz-border-radius-topleft: @tab-top-radius;
       -moz-border-radius-topright: @tab-top-radius;
       border-top-left-radius: @tab-top-radius;
       border-top-right-radius: @tab-top-radius;
+
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
     }
 
     .active {

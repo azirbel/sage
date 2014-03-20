@@ -1,12 +1,12 @@
 
 <div class="content">
 
-  {{!-- Stupid partial won't work --}}
+  {{!-- Can't get header partial to work --}}
   <div class="header">
     <ul class="navigation">
       <li>
         <div class="logo">
-          <img src="assets/logo.png" />
+          <img src="assets/images/logo.png" />
         </div>
       </li>
       <li>
@@ -17,6 +17,14 @@
         <div {{bindAttr class=":header-tab spendingTabIsSelected:active"}}
           {{action 'selectSpendingTab'}}>Spending</div>
       </li>
+      <li>
+        <div {{bindAttr class=":header-tab assetsTabIsSelected:active"}}
+          {{action 'selectAssetsTab'}}>Assets</div>
+      </li>
+      <li>
+        <div {{bindAttr class=":header-tab settingsTabIsSelected:active"}}
+          {{action 'selectSettingsTab'}}>Settings</div>
+      </li>
     </ul>
   </div>
 
@@ -26,6 +34,12 @@
     </div>
     <div {{bindAttr class=":tab-content spendingTabIsSelected::hide"}}>
       {{render spending}}
+    </div>
+    <div {{bindAttr class=":tab-content assetsTabIsSelected::hide"}}>
+      {{render assets}}
+    </div>
+    <div {{bindAttr class=":tab-content settingsTabIsSelected::hide"}}>
+      {{render settings}}
     </div>
   </div>
 </div>
