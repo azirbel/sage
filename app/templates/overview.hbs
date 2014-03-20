@@ -7,7 +7,7 @@
   </div>
 
   <div class="box">
-    <h4 class="box-header">Assets:</h4>
+    <h4 class="box-header">Top Assets:</h4>
     <ul class="mini-asset-table">
       <li>
         <p class="pull-left"><b>Chase Checking</b></p><p class="pull-right">$27,000</p>
@@ -20,10 +20,48 @@
       </li>
     </ul>
   </div>
+
+  <div class="box">
+    <h4 class="box-header">Recent Transactions:</h4>
+    <ul class="mini-asset-table">
+      <li>
+        <p class="pull-left"><b>IN-N-OUT-BRGR</b></p><p class="pull-right">($12.32)</p>
+      </li>
+      <li>
+        <p class="pull-left"><b>IKEA</b></p><p class="pull-right">($156.22)</p>
+      </li>
+      <li>
+        <p class="pull-left"><b>ADDEPAR DRCT DPT</b></p><p class="pull-right">$2,996.17</p>
+      </li>
+    </ul>
+  </div>
 </div>
 
 <div class="right">
-  <h2>
-    Right and lots of stuff Right and lots of stuff Right and lots of stuff Right and lots of stuff
-  </h2>
+  <h2>Asset Breakdown</h2>
+
+  <div class="chart-container">
+    {{time-series-chart
+      lineData=lineData
+      barData=barData
+      selectedSeedColor='rgb(16, 112, 16)'
+    }}
+  </div>
+
+  <div class="chart-container">
+    {{pie-chart
+      selectedSeedColor='rgb(16, 112, 16)'
+      data=assets
+    }}
+  </div>
+
+
+{{!--
+  <div class="table-container">
+    {{table-component
+      hasFooter=false
+      columnsBinding="columns"
+      contentBinding="content"
+    }}
+  </div> --}}
 </div>
