@@ -6,40 +6,40 @@
     <ul class="navigation">
       <li>
         <div class="logo">
-          <img src="assets/images/logo.png" />
+          <img src="assets/images/logo.jpg" width="100" height="30" />
         </div>
       </li>
       <li>
-        <div {{bindAttr class=":header-tab overviewTabIsSelected:active"}}
+        <div {{bind-attr class=":header-tab overviewTabIsSelected:active"}}
           {{action 'selectOverviewTab'}}>Overview</div>
       </li>
       <li>
-        <div {{bindAttr class=":header-tab spendingTabIsSelected:active"}}
+        <div {{bind-attr class=":header-tab spendingTabIsSelected:active"}}
           {{action 'selectSpendingTab'}}>Spending</div>
       </li>
       <li>
-        <div {{bindAttr class=":header-tab assetsTabIsSelected:active"}}
+        <div {{bind-attr class=":header-tab assetsTabIsSelected:active"}}
           {{action 'selectAssetsTab'}}>Assets</div>
       </li>
       <li>
-        <div {{bindAttr class=":header-tab settingsTabIsSelected:active"}}
+        <div {{bind-attr class=":header-tab settingsTabIsSelected:active"}}
           {{action 'selectSettingsTab'}}>Settings</div>
       </li>
     </ul>
   </div>
 
   <div class="tab-content-container">
-    <div {{bindAttr class=":tab-content overviewTabIsSelected::hide"}}>
-      {{render overview}}
+    <div {{bind-attr class=":tab-content overviewTabIsSelected::hide"}}>
+      {{render "overview"}}
     </div>
-    <div {{bindAttr class=":tab-content spendingTabIsSelected::hide"}}>
-      {{render spending}}
+    <div {{bind-attr class=":tab-content spendingTabIsSelected::hide"}}>
+      {{render "spending"}}
     </div>
-    <div {{bindAttr class=":tab-content assetsTabIsSelected::hide"}}>
-      {{render assets}}
+    <div {{bind-attr class=":tab-content assetsTabIsSelected::hide"}}>
+      {{render "assets"}}
     </div>
-    <div {{bindAttr class=":tab-content settingsTabIsSelected::hide"}}>
-      {{render settings}}
+    <div {{bind-attr class=":tab-content settingsTabIsSelected::hide"}}>
+      {{render "settings"}}
     </div>
   </div>
 
