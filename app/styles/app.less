@@ -13,7 +13,6 @@ html, body {
   margin: 0;
   height: 100%;
   width: 100%;
-  overflow: hidden;
 }
 
 * {
@@ -24,6 +23,27 @@ html, body {
 .ember-application > .ember-app {
   height: 100%;
   width: 100%;
+}
+
+h2 {
+  font-family: @firaFontFamily;
+  font-weight: normal;
+}
+
+a {
+  &:link, &:visited, &:active {
+    text-decoration: none;
+    color: @green;
+  }
+
+  &:hover {
+    text-decoration: underline;
+    color: @light-green;
+  }
+}
+
+.tab-content-container {
+  min-height: 600px;
 }
 
 .content {
@@ -39,3 +59,5 @@ html, body {
 /* Pages */
 
 @import 'pages/header.less';
+@import 'pages/footer.less';
+@import 'pages/overview.less';
