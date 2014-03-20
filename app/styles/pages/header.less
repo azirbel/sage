@@ -1,0 +1,53 @@
+
+@import '../variables.less';
+
+@tab-top-radius: 4px;
+
+h2 {
+  font-size: 24px;
+  color: @green;
+}
+
+.header {
+  height: 50px;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid @green;
+}
+
+.logo {
+  display: inline;
+  height: 30px;
+  margin-right: 20px;
+}
+
+ul.navigation {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline;
+
+    font-size: 16px;
+
+    .header-tab {
+      display: inline;
+      cursor: pointer;
+      padding: 6px 12px 6px 12px;
+
+      -webkit-border-top-left-radius: @tab-top-radius;
+      -webkit-border-top-right-radius: @tab-top-radius;
+      -moz-border-radius-topleft: @tab-top-radius;
+      -moz-border-radius-topright: @tab-top-radius;
+      border-top-left-radius: @tab-top-radius;
+      border-top-right-radius: @tab-top-radius;
+    }
+
+    .active {
+      background-color: @white;
+      border: 1px solid @green;
+      border-bottom-width: 0;
+    }
+  }
+}

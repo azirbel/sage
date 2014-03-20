@@ -1,0 +1,38 @@
+/* Helper libraries */
+
+@import 'variables.less';
+
+/* General Page Setup */
+
+html, body {
+  font-size: 14px;
+  color: @dark-gray;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.ember-application > .ember-app {
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hide {
+  display: none;
+}
+
+/* Pages */
+
+@import 'pages/header.less';

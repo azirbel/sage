@@ -1,3 +1,31 @@
-<h2 id='title'>Welcome to Ember.js</h2>
 
-{{outlet}}
+<div class="content">
+
+  {{!-- Stupid partial won't work --}}
+  <div class="header">
+    <ul class="navigation">
+      <li>
+        <div class="logo">
+          <img src="assets/logo.png" />
+        </div>
+      </li>
+      <li>
+        <div {{bindAttr class=":header-tab overviewTabIsSelected:active"}}
+          {{action 'selectOverviewTab'}}>Overview</div>
+      </li>
+      <li>
+        <div {{bindAttr class=":header-tab spendingTabIsSelected:active"}}
+          {{action 'selectSpendingTab'}}>Spending</div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="tab-content-container">
+    <div {{bindAttr class=":tab-content overviewTabIsSelected::hide"}}>
+      {{render overview}}
+    </div>
+    <div {{bindAttr class=":tab-content spendingTabIsSelected::hide"}}>
+      {{render spending}}
+    </div>
+  </div>
+</div>
