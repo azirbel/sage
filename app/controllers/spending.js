@@ -4,6 +4,18 @@ export default Ember.ArrayController.extend({
 
   transactions: Ember.computed.alias('controllers.application.model'),
 
+  categories: [
+    {
+      name: 'food'
+    },
+    {
+      name: 'entertainment'
+    },
+    {
+      name: 'UNCATEGORIZED'
+    }
+  ],
+
   columns: function() {
     var dateColumn = Ember.Table.ColumnDefinition.create({
       isResizable: false,
