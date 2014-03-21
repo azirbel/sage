@@ -5,4 +5,10 @@ var App = Ember.Application.extend({
   Resolver: Resolver['default']
 });
 
+App.Store = DS.Store.extend({
+  adapter: DS.FixtureAdapter
+});
+
+App.ApplicationAdapter = DS.FixtureAdapter;
+
 export default App;
