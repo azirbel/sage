@@ -1,2 +1,60 @@
 @import '../variables.less';
 
+.table-container {
+  border-bottom: 8px solid @light-gray;
+}
+
+.ember-table-scroll-container .antiscroll-scrollbar-horizontal {
+  display: none;
+}
+
+.ember-table-body-container .ember-table-table-row.ember-table-hover {
+  background-color: @very-light-green;
+}
+
+.ember-table-body-container .ember-table-table-row.ember-table-selected {
+  background-color: @light-green;
+  color: @white;
+}
+
+.ember-table-body-container .ember-table-table-row.ember-table-selected .ember-table-cell {
+  border-right-color: @light-gray;
+}
+
+.ember-table-table-row {
+  border-bottom: 1px solid @light-gray;
+}
+
+.ember-table-header-container .ember-table-right-table-block .ember-table-table-row {
+  overflow-x: hidden;
+}
+
+.ember-table-tables-container {
+  border: 1px solid @light-gray;
+}
+
+.ember-table-header-cell {
+  background-color: @light-gray;
+}
+
+.ember-table-cell {
+  border-right-color: @light-gray;
+}
+
+.ember-table-header-cell.text-align-right .ember-table-content {
+  font-weight: normal;
+}
+
+.ember-table-header-cell.text-align-left .ember-table-content {
+  font-weight: normal;
+}
+
+.ember-table-header-container {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.amount-cell {
+  margin-right: 4px;
+}
