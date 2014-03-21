@@ -12,28 +12,33 @@
 }
 
 .logo {
-  display: inline;
-  margin-left: 8px;
-  margin-right: 16px;
+  display: inline-block;
+
+  img {
+    margin: 0 16px 0 8px;
+
+    -webkit-transform: translate(0, -3px);
+    transform: translate(0, -3px);
+  }
 }
 
 ul.navigation {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  height: @header-height;
 
   li {
-    display: inline;
+    display: inline-block;
     height: @header-height;
+    margin-top: 8px;  // Hack
 
     font-size: 16px;
 
     .header-tab {
-      display: inline;
+      display: inline-block;
       cursor: pointer;
       padding: 6px 12px 6px 12px;
-
-      margin-top: auto;
 
       -webkit-border-top-left-radius: @tab-top-radius;
       -webkit-border-top-right-radius: @tab-top-radius;

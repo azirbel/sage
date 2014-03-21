@@ -6,13 +6,16 @@ export default Ember.ArrayController.extend({
 
   categories: [
     {
-      name: 'food'
+      name: 'food',
+      symbol: 'fo'
     },
     {
-      name: 'entertainment'
+      name: 'entertainment',
+      symbol: 'en'
     },
     {
-      name: 'UNCATEGORIZED'
+      name: 'UNCATEGORIZED',
+      symbol: 'UN'
     }
   ],
 
