@@ -1,11 +1,24 @@
-<h2>
-  Spending
-</h2>
+<div class="left">
+  <div class="box">
+    <h4 class="box-header">Filter here</h4>
+  </div>
 
-<div class="table-container">
-{{!--   {{table-component
-    hasFooter=false
-    columnsBinding="columns"
-    contentBinding="content"
-  }} --}}
+  <div class="box">
+    <h4 class="box-header">Filter here</h4>
+  </div>
+
+  <div class="box">
+    <h4 class="box-header">Filter here</h4>
+  </div>
+</div>
+
+<div class="right">
+  <h2>This is where the table will go</h2>
+  <div class="table-container">
+    {{table-component
+      hasFooter=false
+      columnsBinding="columns"
+      contentBinding="content"
+    }}
+  </div>
 </div>

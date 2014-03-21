@@ -1,5 +1,4 @@
 export default Ember.Controller.extend({
-
   numRows: 100,
 
   columns: function() {
@@ -24,7 +23,7 @@ export default Ember.Controller.extend({
       contentPath: 'amount'
     });
     return [dateColumn, descriptionColumn, categoryColumn, amountColumn];
-  },
+  }.property(),
 
   content: []
 });
