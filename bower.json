@@ -6,16 +6,15 @@
     "jquery-ui": "~1.10.3",
     "lodash": "~1.2.0",
     "qunit": "~1.12.0",
+    "d3": "3.3.9",
     "ember-qunit": "https://github.com/rpflorence/ember-qunit.git#master",
-    "ember": "~1.4.0",
+    "ember-debug": "http://builds.emberjs.com/canary/ember.js",
+    "ember-prod": "http://builds.emberjs.com/canary/ember.prod.js",
     "ember-data": "~1.0.0-beta.7",
     "ember-resolver": "git://github.com/stefanpenner/ember-jj-abrams-resolver.git#master",
     "ember-charts": "ember-charts#53520aa311107cdb5d08f551a807ed12fe918cbe",
     "ember-table": "ember-table#3f7236d32ebeb323261186ef87e03be88c2bc44a",
     "ic-ajax": "~0.3.0",
     "ember-testing-httpRespond": "~0.1.1"
-  },
-  "resolutions": {
-    "ember": "~1.4.0"
   }
 }
