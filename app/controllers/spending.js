@@ -7,15 +7,18 @@ export default Ember.ArrayController.extend({
   categories: [
     {
       name: 'food',
-      symbol: 'fo'
+      symbol: 'fo',
+      def: 'food'
     },
     {
       name: 'entertainment',
-      symbol: 'en'
+      symbol: 'en',
+      def: 'entertainment'
     },
     {
       name: 'UNCATEGORIZED',
-      symbol: 'UN'
+      symbol: 'UN',
+      def: 'UNCATEGORIZED'
     }
   ],
 
@@ -39,6 +42,9 @@ export default Ember.ArrayController.extend({
     var categoryColumn = Ember.Table.ColumnDefinition.create({
       isResizable: false,
       textAlign: 'text-align-left',
+      tableCellViewClass: Ember.Table.TableCell.extend({
+        templateName: 'category-table-cell',
+      }),
       columnWidth: 120,
       headerCellName: 'Category',
       contentPath: 'category'
