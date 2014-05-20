@@ -14,7 +14,7 @@
     "ember-listview": "http://builds.emberjs.com/list-view/list-view-latest.js",
     "ember-resolver": "git://github.com/stefanpenner/ember-jj-abrams-resolver.git#master",
     "ember-charts": "ember-charts#53520aa311107cdb5d08f551a807ed12fe918cbe",
-    "ember-table": "ember-table#3f7236d32ebeb323261186ef87e03be88c2bc44a",
+    "ember-table": "git://github.com/azirbel/ember-table#42330ea41638a4c7530df502b236b26cf171f995",
     "ember-widgets": "ember-widgets#3cc196345222312b9984aa38719cf18c2560975f",
     "addepar-style-guide": "git@github.com:Addepar/style-guide.git#c4a85958abacdf7f20ffc3dfc5d3c19ccc03ba74",
     "ic-ajax": "~0.3.0",
