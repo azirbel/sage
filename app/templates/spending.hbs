@@ -1,11 +1,11 @@
 <div class="left">
   <h2>Filters</h2>
   <div class="box">
-    <h4 class="box-header">Filter here</h4>
+    <h4 class="box-header">Time Period Filter</h4>
   </div>
 
   <div class="box">
-    <h4 class="box-header">Filter here</h4>
+    <h4 class="box-header">Category Filter</h4>
 
     <div class="not-container">
       {{select-component
@@ -13,24 +13,48 @@
         optionLabelPath="name"
         optionValuePath="symbol"
         classNames="not-select-example"
+        selectionBinding="selectedCategory"
       }}
     </div>
   </div>
 
   <div class="box">
     <h4 class="box-header">Filter here</h4>
+    <p>{{selectedCategory.name}}</p>
   </div>
 </div>
 
 <div class="right">
-  <h2>Transactions</h2>
-  <div class="table-container">
-    {{table-component
-      hasFooter=false
-      columnsBinding="columns"
-      contentBinding="content"
-      forceFillColumns=true
-      enableColumnReorder=false
+  {{!-- TODO(azirbel): Make this a dropdown selector --}}
+  <div class="view-selections">
+    <div {{bind-attr class=":view-selector transactionsViewIsSelected:active"}}
+      {{action 'selectTransactionsView'}}><h2>Transactions</h2></div>
+    <div {{bind-attr class=":view-selector analysisViewIsSelected:active"}}
+      {{action 'selectAnalysisView'}}><h2>Analysis</h2></div>
+    <div {{bind-attr class=":view-selector budgetsViewIsSelected:active"}}
+      {{action 'selectBudgetsView'}}><h2>Budgets</h2></div>
+  </div>
+
+  <div {{bind-attr class="transactionsViewIsSelected::hide"}}>
+    <div class="table-container">
+      {{table-component
+        hasFooter=false
+        columnsBinding="columns"
+        contentBinding="transactions"
+        forceFillColumns=true
+        enableColumnReorder=false
+      }}
+    </div>
+  </div>
+  <div {{bind-attr class="analysisViewIsSelected::hide"}}>
+  <div class="asset-chart">
+    {{pie-chart
+      selectedSeedColor='rgb(16, 112, 16)'
+      data=spendingByCategory
     }}
+  </div>
+  </div>
+  <div {{bind-attr class="budgetsViewIsSelected::hide"}}>
+    Budgets!
   </div>
 </div>
