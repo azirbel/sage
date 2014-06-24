@@ -13,16 +13,19 @@
     "ember-data": "~1.0.0-beta.7",
     "ember-listview": "http://builds.emberjs.com/list-view/list-view-latest.js",
     "ember-resolver": "git://github.com/stefanpenner/ember-jj-abrams-resolver.git#master",
-    "ember-charts": "ember-charts#53520aa311107cdb5d08f551a807ed12fe918cbe",
-    "ember-widgets": "ember-widgets#3cc196345222312b9984aa38719cf18c2560975f",
+    "ember-charts": "~0.1.0",
+    "ember-table": "~0.2.0",
+    "ember-widgets": "ember-widgets#6e0d6854f88622bb4eefb2a606a261e77bc336f9",
     "addepar-style-guide": "git@github.com:Addepar/style-guide.git#c4a85958abacdf7f20ffc3dfc5d3c19ccc03ba74",
     "ic-ajax": "~0.3.0",
-    "ember-testing-httpRespond": "~0.1.1",
-    "ember-table": "~0.2.0"
+    "ember-testing-httpRespond": "~0.1.1"
   },
   "resolutions": {
     "handlebars": "~1.1.2",
-    "ember": "> 1.5.0-beta.3"
+    "ember": "> 1.5.0-beta.3",
+    "jquery-ui": "1.10.1",
+    "jquery": ">=1.6",
+    "bootstrap": "~3.0.3"
   },
   "devDependencies": {
     "components-font-awesome": "~4.0.3",
