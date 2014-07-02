@@ -1,10 +1,10 @@
-<span class="content">
-  Category Here
-{{!--   {{select-component
-    contentBinding="categories"
+<span class="table-cell-select">
+  {{select-component
+    contentBinding="view.categories"
     optionLabelPath="name"
     optionValuePath="symbol"
     optionDefaultPath="def"
+    selectionBinding="view.selectedCategory"
+    classNames="table-cell-select-component"
   }}
- --}}
 </span>

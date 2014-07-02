@@ -1,0 +1,52 @@
+@import '../variables.less';
+
+.table-cell-select {
+}
+
+.table-cell-select-component {
+  background-color: transparent;
+  .ember-select-choice {
+    // HACK: Dimensions picked to fit the table cell
+    width: 120px;
+    height: 29px;
+    border: none;
+    font-size: 12px;
+    font-weight: 300;
+    color: @dark-gray;
+    background-color: transparent;
+
+    padding: 0;
+
+    .ember-select-result-item {
+      text-align: left;
+      line-height: 29px;
+      margin-left: 8px;
+    }
+
+    .fa-caret-down {
+      top: 8px;
+      right: 10px;
+    }
+  }
+}
+
+// HACK: Makes the dropdown drop past the table
+.ember-table-tables-container {
+  overflow: visible;
+
+  .ember-table-table-container {
+    overflow: visible;
+
+    .antiscroll-box {
+      overflow: visible;
+    }
+
+    .ember-table-table-block {
+      overflow: visible;
+    }
+  }
+
+  .ember-select-result-item {
+    color: @dark-gray;
+  }
+}
