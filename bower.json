@@ -1,12 +1,15 @@
 {
-  "name": "ember-app-kit",
+  "name": "sage",
   "dependencies": {
+    "bootstrap": "~3.2.0",
     "handlebars": "~1.1.2",
-    "jquery": "~1.9.1",
+    "jquery": "~1.10.2",
     "jquery-ui": "~1.10.3",
-    "lodash": "~1.2.0",
+    "lodash": "~2.4.1",
     "qunit": "~1.12.0",
     "d3": "3.3.9",
+    "ic-ajax": "~0.3.0",
+    "ember-testing-httpRespond": "~0.1.1",
     "ember-qunit": "https://github.com/rpflorence/ember-qunit.git#master",
     "ember-debug": "http://builds.emberjs.com/canary/ember.js",
     "ember-prod": "http://builds.emberjs.com/canary/ember.prod.js",
@@ -15,19 +18,14 @@
     "ember-resolver": "git://github.com/stefanpenner/ember-jj-abrams-resolver.git#master",
     "ember-charts": "~0.1.0",
     "ember-table": "~0.2.0",
-    "ember-widgets": "git@github.com:azirbel/ember-widgets.git#8924173062aa118d6d0fb837529ebdf6b57127f0",
-    "ic-ajax": "~0.3.0",
-    "ember-testing-httpRespond": "~0.1.1"
-  },
-  "resolutions": {
-    "handlebars": "~1.1.2",
-    "ember": "> 1.5.0-beta.3",
-    "jquery-ui": "1.10.1",
-    "jquery": ">=1.6"
+    "ember-widgets": "git@github.com:Addepar/ember-widgets.git#0a26d1c6d547ebbd7834280c1f4445b490ad47fd"
   },
   "devDependencies": {
     "components-font-awesome": "~4.0.3",
     "holderjs": "~2.3.2",
     "rangy": "~1.2.3"
+  },
+  "resolutions": {
+    "lodash": "~2.4.1"
   }
 }
