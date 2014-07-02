@@ -26,8 +26,16 @@
   border-bottom: 1px solid @light-gray;
 }
 
-.ember-table-header-container .ember-table-right-table-block .ember-table-table-row {
-  overflow-x: hidden;
+.ember-table-header-row {
+  border-bottom: none;
+}
+
+.ember-table-header-container {
+  border-bottom: none;
+
+  .ember-table-right-table-block .ember-table-table-row {
+    overflow-x: hidden;
+  }
 }
 
 .ember-table-tables-container {
@@ -43,11 +51,19 @@
 }
 
 .ember-table-header-cell.text-align-right .ember-table-content {
-  font-weight: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 18px;
 }
 
 .ember-table-header-cell.text-align-left .ember-table-content {
-  font-weight: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.ember-table-content {
+
 }
 
 .ember-table-header-container {
