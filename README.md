@@ -7,6 +7,7 @@ Sage is an open-source project built for Addepar's 2014 Hackathon. It's based on
 
 ## Getting Started
 
+* Add models/transactions.js file (currently removed from git as a hack)
 * npm install -g grunt-cli
 * npm install
 * bower install

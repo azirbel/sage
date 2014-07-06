@@ -18,3 +18,7 @@
 .DS_Store
 Thumbs.db
 /coverage/*
+
+# hack to use personal data
+/app/models/transaction.js
+
