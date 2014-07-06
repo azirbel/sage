@@ -17,7 +17,7 @@ export default Ember.ArrayController.extend({
     }
     return _.sortBy(this.get('allTransactions.content'), function (transaction) {
       return new Date(transaction.get('date')).getTime();
-    });
+    }).reverse();
   }.property('allTransactions', 'allTransactions.@each.category', 'selectedCategory'),
 
   selectedCategory: null,
