@@ -16,7 +16,7 @@ export default Ember.ArrayController.extend({
       });
     }
     return _.sortBy(this.get('allTransactions.content'), function (transaction) {
-      return transaction.get('date').getTime();
+      return new Date(transaction.get('date')).getTime();
     });
   }.property('allTransactions', 'allTransactions.@each.category', 'selectedCategory'),
 
@@ -47,7 +47,7 @@ export default Ember.ArrayController.extend({
       columnWidth: 100,
       headerCellName: 'Date',
       getCellContent: function(row) {
-        return row.get('date').toDateString();
+        return new Date(row.get('date')).toDateString();
       }
     });
     var descriptionColumn = Ember.Table.ColumnDefinition.create({
