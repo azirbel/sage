@@ -1,5 +1,8 @@
 @import 'variables.less';
 
+@left-width: 260px;
+@right-width: 500px;
+
 .main-container {
   width: @content-width;
   margin-left: auto;
@@ -15,14 +18,16 @@
 }
 
 .left {
+  position: relative;
   float: left;
-  width: 260px;
+  width: @left-width;
+  height: 700px;    // TODO(azirbel): Hack, set this to inner element size
   margin-right: 40px;
 }
 
 .right {
   float: left;
-  width: 500px;
+  width: @right-width;
 }
 
 .box {
@@ -33,6 +38,12 @@
   h4.box-header {
     margin: 4px 0 8px 6px;
   }
+}
+
+.box-edit-panel {
+  .box;
+
+  background-color: @very-light-green;
 }
 
 .view-selections {

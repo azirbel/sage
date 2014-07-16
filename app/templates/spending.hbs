@@ -1,26 +1,54 @@
 <div class="left">
-  <h2>Filters</h2>
-  <div class="box">
-    <h4 class="box-header">Time Period Filter</h4>
-  </div>
+  <div class="slide">
+    <div {{bind-attr class="isEditingTransaction:slide-left-active:slide-left"}}>
+      <h2>Filters</h2>
+      <div class="box">
+        <h4 class="box-header">Time Period Filter</h4>
+      </div>
 
-  <div class="box">
-    <h4 class="box-header">Category Filter</h4>
+      <div class="box">
+        <h4 class="box-header">Category Filter</h4>
 
-    <div class="not-container">
-      {{select-component
-        contentBinding="categories"
-        optionLabelPath="name"
-        optionValuePath="symbol"
-        classNames="not-select-example"
-        selectionBinding="selectedCategory"
-      }}
+        <div class="not-container">
+          {{select-component
+            contentBinding="categories"
+            optionLabelPath="name"
+            optionValuePath="symbol"
+            classNames="not-select-example"
+            selectionBinding="selectedCategory"
+          }}
+        </div>
+      </div>
+
+      <div class="box">
+        <h4 class="box-header">Filter here</h4>
+        <p>{{selectedCategory.name}}</p>
+      </div>
     </div>
-  </div>
+    <div {{bind-attr class="isEditingTransaction:slide-right-active:slide-right"}}>
+      <h2>Edit Transaction</h2>
+      <div class="box-edit-panel transaction-edit-panel">
+        <h5>Description</h5>
+        {{input value=transactionDescription}}
+        <h5>Original Description</h5>
+        {{input value=transactionOriginalDescription}}
+        <h5>Date</h5>
+        {{input value=transactionDate}}
+        <h5>Amount</h5>
+        {{input value=transactionAmount}}
+        <h5>Type</h5>
+        {{input value=transactionType}}
+        <h5>Account</h5>
+        {{input value=transactionAccount}}
+        <h5>Category</h5>
+        {{input value=transactionCategory}}
+        <h5>Group</h5>
+        {{input value=transactionGroup}}
 
-  <div class="box">
-    <h4 class="box-header">Filter here</h4>
-    <p>{{selectedCategory.name}}</p>
+        <br /><br />
+        <button {{action "hideTransactionEditPanel"}}>Cancel</button>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -43,6 +71,7 @@
         contentBinding="transactions"
         forceFillColumns=true
         enableColumnReorder=false
+        selectionBinding="selectedTransaction"
       }}
     </div>
   </div>

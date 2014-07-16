@@ -22,6 +22,31 @@ export default Ember.ArrayController.extend({
 
   selectedCategory: null,
 
+  selectedTransaction: null,
+
+  transactionDate: null,
+  transactionDescription: null,
+  transactionOriginalDescription: null,
+  transactionAmount: null,
+  transactionType: null,
+  transactionAccount: null,
+  transactionCategory: null,
+  transactionGroup: null,
+
+  selectedTransactionObserver: function() {
+    if (this.get('selectedTransaction') != null) {
+      this.set('isEditingTransaction', true);
+      this.set('transactionDate', this.get('selectedTransaction.date'));
+      this.set('transactionDescription', this.get('selectedTransaction.description'));
+      this.set('transactionOriginalDescription', this.get('selectedTransaction.original_description'));
+      this.set('transactionAmount', this.get('selectedTransaction.amount'));
+      this.set('transactionType', this.get('selectedTransaction.type'));
+      this.set('transactionAccount', this.get('selectedTransaction.account'));
+      this.set('transactionCategory', this.get('selectedTransaction.category'));
+      this.set('transactionGroup', this.get('selectedTransaction.group'));
+    }
+  }.observes('selectedTransaction'),
+
   categories: [
     {
       name: 'food',
@@ -182,6 +207,15 @@ export default Ember.ArrayController.extend({
 
     selectBudgetsView: function() {
       this.set('view', 'budgets');
+    },
+
+    showTransactionEditPanel: function() {
+      this.set('isEditingTransaction', true);
+    },
+
+    hideTransactionEditPanel: function() {
+      this.set('isEditingTransaction', false);
+      this.set('selectedTransaction', null);
     }
   }
 });
