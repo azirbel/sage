@@ -76,12 +76,12 @@
     </div>
   </div>
   <div {{bind-attr class="analysisViewIsSelected::hide"}}>
-  <div class="asset-chart">
-    {{pie-chart
-      selectedSeedColor='rgb(16, 112, 16)'
-      data=spendingByCategory
-    }}
-  </div>
+    <div class="asset-chart">
+      {{pie-chart
+        selectedSeedColor='rgb(16, 112, 16)'
+        data=spendingByCategory
+      }}
+    </div>
   </div>
   <div {{bind-attr class="budgetsViewIsSelected::hide"}}>
     Budgets!

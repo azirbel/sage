@@ -12,7 +12,7 @@ export default Ember.ArrayController.extend({
         return transaction.get('category') === _this.get('selectedCategory.name');
       });
       return _.sortBy(filteredTransactions, function (transaction) {
-        return transaction.get('date').getTime();
+        return new Date(transaction.get('date')).getTime();
       });
     }
     return _.sortBy(this.get('allTransactions.content'), function (transaction) {
@@ -47,23 +47,7 @@ export default Ember.ArrayController.extend({
     }
   }.observes('selectedTransaction'),
 
-  categories: [
-    {
-      name: 'food',
-      symbol: 'fo',
-      def: 'food'
-    },
-    {
-      name: 'entertainment',
-      symbol: 'en',
-      def: 'entertainment'
-    },
-    {
-      name: 'UNCATEGORIZED',
-      symbol: 'UN',
-      def: 'UNCATEGORIZED'
-    }
-  ],
+  categories: Ember.computed.alias('controllers.application.categories'),
 
   columns: function() {
     var dateColumn = Ember.Table.ColumnDefinition.create({
@@ -104,23 +88,7 @@ export default Ember.ArrayController.extend({
       tableCellViewClass: Ember.Table.TableCell.extend({
         isEditing: false,
         templateName: 'category-table-cell',
-        categories: [
-          {
-            name: 'food',
-            symbol: 'fo',
-            def: 'food'
-          },
-          {
-            name: 'entertainment',
-            symbol: 'en',
-            def: 'entertainment'
-          },
-          {
-            name: 'UNCATEGORIZED',
-            symbol: 'UN',
-            def: 'UNCATEGORIZED'
-          }
-        ],
+        categories: this.get('controllers.application.categories'),
         selectedCategory: function() {
           if (this.get('row')) {
             return {
