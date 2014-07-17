@@ -136,6 +136,22 @@ export default Ember.ArrayController.extend({
     return [dateColumn, descriptionColumn, categoryColumn, amountColumn];
   }.property(),
 
+  chartTypes: function() {
+    return [
+      {
+        name: 'Spending By Category',
+        label: 'category'
+      }, {
+        name: 'Spending Over Time',
+        label: 'time'
+      }
+    ];
+  }.property(),
+
+  selectedChart: function() {
+    return this.get('chartTypes')[0];
+  }.property('chartTypes'),
+
   spendingByCategory: function() {
     var _this = this;
     return _.map(this.get('categories'), function(category) {
@@ -152,8 +168,31 @@ export default Ember.ArrayController.extend({
     });
   }.property('categories', 'transactions'),
 
+  // Fake value over time assuming we start at 0
+  // TODO(azirbel): This messes up the order of the transactions table for some reason
+  spendingOverTime: function() {
+    return _.reduce(this.get('transactions').reverse(), function(result, transaction) {
+      var delta = transaction.get('amount');
+      if (transaction.get('type') === 'debit') {
+        delta = -delta;
+      }
+      result.push({
+        'time': new Date(transaction.get('date')),
+        'value': delta + result[result.length-1].value
+      });
+      return result;
+    }, [{
+      'time': new Date(this.get('transactions')[0].get('date')),
+      'value': 0
+    }]);
+  }.property('transactions'),
+
+  categoryChartIsSelected: Ember.computed.equal('selectedChart.label', 'category'),
+  timeChartIsSelected: Ember.computed.equal('selectedChart.label', 'time'),
+
   view: null,
 
+  // TODO(azirbel): Convert to Ember.computed.equal
   transactionsViewIsSelected: function() {
     return this.get('view') === 'transactions' || this.get('view') == null;
   }.property('view'),

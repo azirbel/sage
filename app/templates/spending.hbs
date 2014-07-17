@@ -53,7 +53,7 @@
 </div>
 
 <div class="right">
-  {{!-- TODO(azirbel): Make this a dropdown selector --}}
+  {{!-- TODO(azirbel): Make this a dropdown selector? --}}
   <div class="view-selections">
     <div {{bind-attr class=":view-selector transactionsViewIsSelected:active"}}
       {{action 'selectTransactionsView'}}><h2>Transactions</h2></div>
@@ -76,11 +76,29 @@
     </div>
   </div>
   <div {{bind-attr class="analysisViewIsSelected::hide"}}>
-    <div class="asset-chart">
-      {{pie-chart
-        selectedSeedColor='rgb(16, 112, 16)'
-        data=spendingByCategory
+    <div class="selection-bar">
+      {{select-component
+        contentBinding="chartTypes"
+        optionLabelPath="name"
+        optionValuePath="label"
+        selectionBinding="selectedChart"
+        classNames="chart-selector"
       }}
+    </div>
+    <div class="chart-container">
+      {{#if categoryChartIsSelected}}
+        {{pie-chart
+          selectedSeedColor="rgb(16, 112, 16)"
+          data=spendingByCategory
+        }}
+      {{/if}}
+      {{#if timeChartIsSelected}}
+        {{time-series-chart
+          selectedSeedColor="rgb(16, 112, 16)"
+          lineData=spendingOverTime
+          height=200
+        }}
+      {{/if}}
     </div>
   </div>
   <div {{bind-attr class="budgetsViewIsSelected::hide"}}>
