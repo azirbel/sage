@@ -5,7 +5,6 @@ export default Ember.ArrayController.extend({
   allTransactions: Ember.computed.alias('controllers.application.model'),
 
   transactions: function() {
-    console.log('recomputing the table.');
     if (this.get('selectedCategory') != null) {
       var _this = this;
       var filteredTransactions = _.filter(this.get('allTransactions.content'), function(transaction) {
@@ -108,13 +107,10 @@ export default Ember.ArrayController.extend({
         onRowContentDidChange: function() {
           this.set('isEditing', false);
           if (this.get('row')) {
-            console.log('rowContent changed. c: ' + this.get('row.category'));
             this.set('selectedCategory', {
               name: this.get('row.category'),
               value: this.get('row.category')
             });
-          } else {
-            console.log('rowContent changed. no row.');
           }
         }.observes('row', 'row.id', 'row.category'),
         click: function(event) {
